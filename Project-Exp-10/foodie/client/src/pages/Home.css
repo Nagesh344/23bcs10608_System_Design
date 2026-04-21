@@ -1,0 +1,178 @@
+.home { padding-bottom: 0; }
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #fff5f2 0%, #fff0eb 40%, #ffeadf 100%);
+  padding: 80px 0 60px;
+  overflow: hidden;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-text { display: flex; flex-direction: column; gap: 20px; }
+
+.hero-tag {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+  width: fit-content;
+}
+
+.hero-text h1 {
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.15;
+  color: var(--secondary);
+}
+
+.hero-accent { color: var(--primary); }
+
+.hero-text p {
+  font-size: 17px;
+  color: var(--text-muted);
+  max-width: 440px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 50px;
+  box-shadow: var(--shadow-lg);
+  padding: 6px 6px 6px 20px;
+  gap: 10px;
+  max-width: 500px;
+}
+
+.search-icon { font-size: 18px; }
+
+.search-bar input {
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 15px;
+  flex: 1;
+  padding: 8px 0;
+  width: 0;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 32px;
+}
+.hero-stats div { display: flex; flex-direction: column; }
+.hero-stats strong { font-size: 22px; font-family: 'Playfair Display', serif; color: var(--secondary); }
+.hero-stats span { font-size: 13px; color: var(--text-muted); }
+
+/* Hero Visual */
+.hero-visual { display: flex; justify-content: center; }
+.hero-img-wrap { position: relative; width: 380px; height: 380px; }
+.hero-img-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%;
+  box-shadow: var(--shadow-lg);
+  animation: morph 8s ease-in-out infinite;
+}
+
+@keyframes morph {
+  0%, 100% { border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%; }
+  50% { border-radius: 60% 40% 30% 70% / 60% 50% 40% 40%; }
+}
+
+.hero-float {
+  position: absolute;
+  background: white;
+  border-radius: 50px;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: var(--shadow-lg);
+  animation: float 3s ease-in-out infinite;
+}
+.hero-float-1 { bottom: 60px; left: -20px; animation-delay: 0s; }
+.hero-float-2 { top: 40px; right: -10px; animation-delay: 1.5s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Categories */
+.categories { padding: 64px 24px 0; }
+.categories h2 { font-size: 30px; margin-bottom: 24px; }
+
+.categories-grid {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.category-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  border: 2px solid var(--border);
+  border-radius: 50px;
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s;
+  color: var(--text);
+}
+.category-chip:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); box-shadow: var(--shadow); }
+
+.cat-emoji { font-size: 20px; }
+
+/* Featured */
+.featured { padding: 64px 24px 0; }
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.section-header h2 { font-size: 30px; }
+.see-all { color: var(--primary); font-weight: 600; font-size: 15px; }
+.see-all:hover { text-decoration: underline; }
+
+.restaurants-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+/* CTA Banner */
+.cta-banner { padding: 64px 24px; }
+.cta-inner {
+  background: linear-gradient(135deg, var(--secondary) 0%, #2d2d4e 100%);
+  border-radius: var(--radius-lg);
+  padding: 48px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.cta-inner h2 { color: white; font-size: 28px; margin-bottom: 8px; }
+.cta-inner p { color: rgba(255,255,255,0.7); font-size: 16px; }
+
+@media (max-width: 900px) {
+  .hero-content { grid-template-columns: 1fr; gap: 40px; }
+  .hero-visual { display: none; }
+}
+
+@media (max-width: 600px) {
+  .hero { padding: 48px 0; }
+  .cta-inner { flex-direction: column; text-align: center; padding: 36px 24px; }
+  .hero-stats { gap: 20px; }
+}

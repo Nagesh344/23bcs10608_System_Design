@@ -1,0 +1,61 @@
+.restaurants-page { padding-bottom: 60px; }
+
+.restaurants-header {
+  background: linear-gradient(135deg, var(--secondary) 0%, #2d2d4e 100%);
+  padding: 48px 24px;
+  margin-bottom: 32px;
+  color: white;
+}
+.restaurants-header h1 { font-size: 36px; margin-bottom: 6px; }
+.restaurants-header p { color: rgba(255,255,255,0.65); margin-bottom: 24px; }
+
+.rest-search {
+  display: flex;
+  max-width: 500px;
+  gap: 10px;
+}
+.rest-search input {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.25);
+  color: white;
+}
+.rest-search input::placeholder { color: rgba(255,255,255,0.5); }
+.rest-search input:focus { border-color: white; }
+
+.cuisine-filter {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.cuisine-btn {
+  padding: 8px 20px;
+  border-radius: 50px;
+  border: 2px solid var(--border);
+  background: white;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all 0.2s;
+}
+.cuisine-btn:hover { border-color: var(--primary); color: var(--primary); }
+.cuisine-btn.active { border-color: var(--primary); background: var(--primary); color: white; }
+
+.results-count { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; }
+
+.restaurants-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.empty-state p { font-size: 20px; color: var(--text-muted); }

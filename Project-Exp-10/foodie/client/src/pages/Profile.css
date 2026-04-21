@@ -1,0 +1,70 @@
+.profile-page { padding: 48px 24px; }
+.profile-page h1 { font-size: 32px; margin-bottom: 32px; }
+
+.profile-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.profile-avatar-card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  position: sticky;
+  top: 88px;
+}
+
+.avatar-big {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  font-size: 32px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.profile-avatar-card h3 { font-size: 18px; font-family: 'DM Sans', sans-serif; font-weight: 700; }
+.profile-avatar-card p { font-size: 13px; color: var(--text-muted); }
+
+.role-badge {
+  padding: 4px 14px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.role-badge.admin { background: #fef3c7; color: #d97706; }
+.role-badge.user { background: var(--primary-light); color: var(--primary); }
+
+.profile-form .form-section {
+  background: white;
+  border-radius: var(--radius);
+  padding: 28px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+}
+.profile-form .form-section h3 {
+  font-size: 17px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+@media (max-width: 900px) {
+  .profile-layout { grid-template-columns: 1fr; }
+  .profile-avatar-card { position: static; }
+}
